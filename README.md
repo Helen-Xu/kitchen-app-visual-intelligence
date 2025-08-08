@@ -11,7 +11,7 @@ However, when I tap on the object in the feed, it did not open the app. It only 
 I set breakpoint in `perform` method in `OpenRecipeIntent` and the breakpoint is not hit.   
 I set breakpoint in `entities(for:)` method in `RecipeQuery`, and it's hit. But my understanding based on [Apple's doc](https://developer.apple.com/documentation/visualintelligence/integrating-your-app-with-visual-intelligence) is that Visual Intelligence framework relies on IntentValueQuery to find the objects, and `EntityQuery` doesn't need to be implemented.  
 I've also attached screenshots of the feed, and the error mesage here. 
-|feed|error|
-|---|---|
-|<img width="645" height="1398" alt="IMG_0293" src="https://github.com/user-attachments/assets/e332f3de-c014-42eb-a1db-7e83d26dbadd" />|<img width="645" height="1398" alt="IMG_0294" src="https://github.com/user-attachments/assets/9cd3e198-abe5-40e4-8f1e-9c5fae1048ed" />|
+|feed|error(beta4)|error(beta5)|
+|---|---|---|
+|<img width="645" height="1398" alt="IMG_0293" src="https://github.com/user-attachments/assets/e332f3de-c014-42eb-a1db-7e83d26dbadd" />|<img width="645" height="1398" alt="IMG_0294" src="https://github.com/user-attachments/assets/9cd3e198-abe5-40e4-8f1e-9c5fae1048ed" />|<img width="645" height="1398" alt="View recent photos-1 2" src="https://github.com/user-attachments/assets/19ed728b-bf59-41b9-ac42-dcf6bf5f5c36" />|
 
