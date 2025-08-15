@@ -17,7 +17,7 @@ struct RecipeEntity: AppEntity, Sendable {
                 numericFormat: "\(placeholder: .int) recipes")
         }
 
-    var id: UUID = UUID()
+    var id: String
     var title: String = "placeholder title"
 
     var displayRepresentation: DisplayRepresentation {
@@ -26,8 +26,8 @@ struct RecipeEntity: AppEntity, Sendable {
                 image: .init(named: "Shakshuka"))
         }
     
-    init() {
-//        self.title = "placeholder title"
+    init(id: String) {
+        self.id = id
     }
 
     public static var defaultQuery = RecipeQuery()
@@ -35,8 +35,22 @@ struct RecipeEntity: AppEntity, Sendable {
 
 @available(iOS 26.0, *)
 struct RecipeQuery: EntityQuery {
-    func entities(for identifiers: [UUID]) async throws -> [RecipeEntity] {
-        []
+    func entities(for identifiers: [String]) async throws -> [RecipeEntity] {
+        var results = [] as [RecipeEntity]
+        for id in identifiers {
+//            // return the same entity instance based on id
+//            if id == "1" {
+//                results.append(RecipeEntityInventory.shared.recipe1)
+//            } else if id == "2" {
+//                results.append(RecipeEntityInventory.shared.recipe2)
+//            } else if id == "3" {
+//                results.append(RecipeEntityInventory.shared.recipe3)
+//            }
+            
+            // create a new entity instance with the same id
+            results.append(RecipeEntity(id: id))
+        }
+        return results
     }
 
     func suggestedEntities() async throws -> [RecipeEntity] {

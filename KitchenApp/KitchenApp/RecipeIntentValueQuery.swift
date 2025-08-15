@@ -12,9 +12,9 @@ import VisualIntelligence
 @available(iOS 26.0, *)
 struct RecipeIntentValueQuery: IntentValueQuery {
     func values(for input: SemanticContentDescriptor) async throws -> [RecipeEntity] {
-        let r1 = RecipeEntity()
-        let r2 = RecipeEntity()
-        let r3 = RecipeEntity()
+        let r1 = RecipeEntityInventory.shared.recipe1
+        let r2 = RecipeEntityInventory.shared.recipe2
+        let r3 = RecipeEntityInventory.shared.recipe3
         return [r1, r2, r3]
     }
 }
